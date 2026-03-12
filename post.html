@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post | Pulse Blog</title>
+  <meta name="description" content="Leia um post completo do Pulse Blog.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">P</span>
+        <span class="brand-text">Pulse Blog</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-menu" class="site-nav">
+        <a href="index.html">Inicio</a>
+        <a href="posts.html">Posts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <article class="section">
+      <div class="container article-shell">
+        <a class="back-link" href="posts.html">Voltar para posts</a>
+        <div id="post-content" class="article-content"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <p class="footer-brand">Pulse Blog</p>
+        <p class="footer-text">Projeto estatico pronto para Netlify.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="posts.html">Posts</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>
