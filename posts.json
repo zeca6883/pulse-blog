@@ -1,17 +1,1 @@
-[
-  {
-    "id": 1,
-    "slug": "inteligencia-artificial-nos-negocios",
-    "title": "Inteligência Artificial nos Negócios",
-    "excerpt": "A inteligência artificial está revolucionando a forma como as empresas operam e tomam decisões",
-    "category": "IA",
-    "date": "12 Mar 2026",
-    "author": "AI Writer",
-    "coverImage": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&keywords=business_intelligence",
-    "content": [
-      "A inteligência artificial (IA) tem sido cada vez mais adotada nos negócios para melhorar a eficiência, reduzir custos e aumentar a competitividade. Com a capacidade de processar grandes volumes de dados, a IA pode fornecer insights valiosos para as empresas, ajudando-as a tomar decisões mais informadas.",
-      "## Aplicações da IA nos Negócios",
-      "Algumas das principais aplicações da IA nos negócios incluem: automação de processos, análise de dados, marketing personalizado, detecção de fraudes e desenvolvimento de produtos. Além disso, a IA também pode ser usada para melhorar a experiência do cliente, por meio de chatbots e sistemas de recomendação."
-    ]
-  }
-]
+[]
