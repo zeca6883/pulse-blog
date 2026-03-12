@@ -1,6 +1,11 @@
 [build]
   publish = "."
 
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+    buildDir = "."
+
 [[headers]]
   for = "/*"
   [headers.values]

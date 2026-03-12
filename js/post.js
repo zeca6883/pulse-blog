@@ -5,35 +5,26 @@ async function renderSinglePost() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
-  if (!slug) {
-    container.innerHTML = `
-      <h1>Post nao encontrado</h1>
-      <p class="article-lead">O link informado nao possui um slug valido.</p>
-    `;
-    return;
-  }
+  if (!slug) return;
 
   try {
     const posts = await fetchPosts();
     const post = posts.find((item) => item.slug === slug);
 
-    if (!post) {
-      container.innerHTML = `
-        <h1>Post nao encontrado</h1>
-        <p class="article-lead">Nao localizamos o conteudo solicitado.</p>
-      `;
-      return;
-    }
+    if (!post) return;
 
+    // SEO: Atualiza o título da aba e a meta descrição
     document.title = `${post.title} | Pulse Blog`;
-    updateMetaDescription(post.excerpt);
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", post.excerpt);
+    }
 
     const paragraphs = post.content
       .map((paragraph) => {
         if (paragraph.startsWith("## ")) {
           return `<h2>${paragraph.replace("## ", "")}</h2>`;
         }
-
         return `<p>${paragraph}</p>`;
       })
       .join("");
@@ -50,10 +41,7 @@ async function renderSinglePost() {
       <div class="article-body">${paragraphs}</div>
     `;
   } catch (error) {
-    container.innerHTML = `
-      <h1>Erro ao carregar</h1>
-      <p class="article-lead">Nao foi possivel buscar o conteudo do post.</p>
-    `;
+    console.error("Erro no SEO/Renderização:", error);
   }
 }
 

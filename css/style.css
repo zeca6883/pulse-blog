@@ -52,6 +52,7 @@ input {
   margin: 0 auto;
 }
 
+/* HEADER AJUSTADO */
 .site-header {
   position: sticky;
   top: 0;
@@ -65,30 +66,26 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 76px;
+  min-height: 120px; /* Aumentado para suportar o logo de 100px */
   gap: 1rem;
 }
 
+/* LOGO CUSTOMIZADO */
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-weight: 800;
+  transition: opacity 0.3s ease;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  color: #fff;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
-  box-shadow: var(--shadow);
+.brand:hover {
+  opacity: 0.8;
 }
 
-.brand-text {
-  letter-spacing: -0.03em;
+.logo-img {
+  height: 100px; /* Sua preferência de altura */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -98,10 +95,11 @@ input {
 }
 
 .site-nav a {
-  padding: 0.45rem 0.8rem;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
   color: var(--muted);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .site-nav a:hover,
@@ -126,6 +124,7 @@ input {
   border-radius: 999px;
 }
 
+/* HERO E SEÇÕES */
 .hero,
 .section,
 .page-main {
@@ -222,17 +221,18 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0.85rem 1.3rem;
+  min-height: 3.2rem;
+  padding: 0.85rem 1.8rem;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .button:hover,
 .pagination button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 .button-primary {
@@ -253,7 +253,7 @@ h3 {
   align-items: center;
   justify-content: center;
   min-height: 420px;
-  padding: 2rem;
+  padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: var(--radius-lg);
   background:
@@ -262,6 +262,12 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.hero-card img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+/* GRIDS E CARDS */
 .section-soft {
   background: rgba(255, 255, 255, 0.42);
   border-top: 1px solid rgba(29, 36, 51, 0.06);
@@ -295,11 +301,16 @@ h3 {
 }
 
 .feature-card {
-  padding: 1.6rem;
+  padding: 2rem;
 }
 
 .post-card {
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
 }
 
 .post-card-content {
@@ -321,139 +332,29 @@ h3 {
 
 .post-card h3 {
   margin-bottom: 0.75rem;
-}
-
-.post-card p {
-  margin: 0 0 1rem;
-}
-
-.post-card a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-weight: 800;
+  line-height: 1.3;
 }
 
 .post-cover {
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: linear-gradient(135deg, rgba(217, 111, 50, 0.18), rgba(35, 75, 99, 0.18));
+  background: #eee;
 }
 
-.text-link {
-  font-weight: 800;
-  color: var(--accent);
-}
-
-.page-hero {
-  padding-bottom: 1rem;
-}
-
-.page-hero-content {
-  max-width: 58rem;
-}
-
-.toolbar {
-  align-items: end;
-  margin-bottom: 2rem;
-}
-
-.search-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  width: min(100%, 420px);
-  padding: 1rem 1.1rem;
-}
-
-.search-field span {
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--brand-dark);
-}
-
-.search-field input {
-  border: 0;
-  outline: 0;
-  background: transparent;
-}
-
-.pagination {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.pagination button.active {
-  color: #fff;
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.empty-state {
-  padding: 2rem;
-  text-align: center;
-}
-
-.article-shell {
-  max-width: 860px;
-}
-
-.back-link {
-  display: inline-flex;
-  margin-bottom: 1.2rem;
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.article-content {
-  padding: 2rem;
-}
-
-.article-content h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  max-width: none;
-  margin-bottom: 1rem;
-}
-
-.article-lead {
-  margin: 0 0 2rem;
-  font-size: 1.08rem;
-}
-
-.article-body p {
-  margin: 0 0 1.25rem;
-}
-
-.article-body h2 {
-  margin: 2.4rem 0 0.8rem;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-}
-
+/* FOOTER */
 .site-footer {
-  padding: 1.6rem 0 2rem;
+  padding: 3rem 0;
   border-top: 1px solid rgba(29, 36, 51, 0.08);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .footer-brand {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
 }
 
-.footer-text {
-  margin: 0;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 1rem;
-  color: var(--muted);
-}
-
+/* RESPONSIVIDADE */
 @media (max-width: 900px) {
   .hero-grid,
   .section-heading,
@@ -467,6 +368,14 @@ h3 {
   .post-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .nav-wrap {
+    min-height: 100px;
+  }
+
+  .logo-img {
+    height: 70px; /* Logo menor no tablet */
+  }
 }
 
 @media (max-width: 720px) {
@@ -476,13 +385,13 @@ h3 {
 
   .site-nav {
     position: absolute;
-    top: 76px;
+    top: 100px;
     right: 1rem;
     left: 1rem;
     display: none;
     flex-direction: column;
     align-items: stretch;
-    padding: 1rem;
+    padding: 1.5rem;
     border: 1px solid rgba(29, 36, 51, 0.08);
     border-radius: var(--radius-md);
     background: rgba(255, 253, 248, 0.98);
@@ -498,17 +407,127 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .hero,
-  .section,
-  .page-main {
-    padding: 1.5rem 0 3rem;
+  .logo-img {
+    height: 60px; /* Logo menor no celular */
   }
+}
+/* BARRA DE BUSCA E TOOLBAR */
+.toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
 
-  .hero-copy {
-    padding: 2rem 0 0;
-  }
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 450px;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  box-shadow: 0 10px 30px rgba(24, 39, 75, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .article-content {
-    padding: 1.4rem;
+.search-field:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.search-field span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-dark);
+}
+
+.search-field input {
+  border: 0;
+  outline: 0;
+  font-size: 1.1rem;
+  color: var(--text);
+  background: transparent;
+  width: 100%;
+}
+
+.search-field input::placeholder {
+  color: #a0aec0;
+}
+
+.results-count {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+/* AJUSTE RESPONSIVO PARA A BUSCA */
+@media (max-width: 720px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
   }
+  
+  .search-field {
+    max-width: 100%;
+  }
+}
+
+/* Ajuste da estrutura da página de post */
+.article-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+/* Alinhamento do link de voltar */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem; /* Espaço para não encostar nos metadados */
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-5px);
+}
+
+/* Organização dos metadados (IA, Data, Autor) */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem; /* Espaço uniforme entre os itens */
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line); /* Linha sutil para separar do título */
+  color: var(--brand-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Garante que o conteúdo do post comece alinhado */
+.article-content {
+  padding: 0; /* Remove padding interno que pode causar desalinhamento lateral */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.article-content h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
