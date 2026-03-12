@@ -1,36 +1,17 @@
 [
   {
-    "id": 2,
-    "slug": "inteligencia-artificial-aplicada-a-negocios",
-    "title": "Inteligência Artificial Aplicada a Negócios",
-    "excerpt": "A inteligência artificial está revolucionando o mundo dos negócios, proporcionando soluções inovadoras e eficientes para empresas de todos os tamanhos.",
-    "category": "IA",
-    "date": "12 Mar 2026",
-    "author": "AI Writer",
-    "coverImage": "assets/hero-illustration.svg",
-    "content": [
-      "A inteligência artificial (IA) é uma tecnologia que permite que os computadores realizem tarefas que normalmente exigiriam inteligência humana, como aprender, raciocinar e resolver problemas. No contexto dos negócios, a IA pode ser aplicada de diversas maneiras, desde a automação de processos até a análise de dados e a tomada de decisões.",
-      "## Benefícios da IA para os Negócios",
-      "A aplicação da IA nos negócios pode trazer uma série de benefícios, incluindo a melhoria da eficiência, a redução de custos e o aumento da competitividade. Além disso, a IA pode ajudar as empresas a tomar decisões mais informadas, com base em dados precisos e atualizados, e a identificar oportunidades de negócios que podem não ser visíveis a olho nu.",
-      "## Aplicações da IA nos Negócios",
-      "Algumas das principais aplicações da IA nos negócios incluem a automação de processos, a análise de dados, a detecção de fraudes, a personalização de experiências de cliente e a gestão de cadeias de suprimentos. Além disso, a IA também pode ser usada para desenvolver chatbots e outros sistemas de interface de usuário, que podem ajudar as empresas a se comunicar de forma mais eficaz com os clientes e a melhorar a experiência do usuário."
-    ]
-  },
-  {
     "id": 1,
-    "slug": "inteligencia-artificial-aplicada-a-negocios",
-    "title": "Inteligência Artificial Aplicada a Negócios",
-    "excerpt": "A inteligência artificial (IA) está revolucionando a forma como as empresas operam e tomam decisões.",
+    "slug": "inteligencia-artificial-nos-negocios",
+    "title": "Inteligência Artificial nos Negócios",
+    "excerpt": "A inteligência artificial está revolucionando a forma como as empresas operam e tomam decisões",
     "category": "IA",
     "date": "12 Mar 2026",
     "author": "AI Writer",
-    "coverImage": "assets/hero-illustration.svg",
+    "coverImage": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&keywords=business_intelligence",
     "content": [
-      "A inteligência artificial (IA) é uma tecnologia que permite que máquinas e computadores realizem tarefas que normalmente exigiriam inteligência humana, como aprender, raciocinar e resolver problemas. No contexto dos negócios, a IA pode ser aplicada de diversas maneiras, desde a automação de processos até a análise de dados e a tomada de decisões.",
-      "## Benefícios da IA para os Negócios",
-      "A aplicação da IA nos negócios pode trazer uma série de benefícios, incluindo a melhoria da eficiência operacional, a redução de custos, o aumento da produtividade e a melhoria da experiência do cliente. Além disso, a IA pode ajudar as empresas a tomar decisões mais informadas, com base em dados e análises precisas.",
+      "A inteligência artificial (IA) tem sido cada vez mais adotada nos negócios para melhorar a eficiência, reduzir custos e aumentar a competitividade. Com a capacidade de processar grandes volumes de dados, a IA pode fornecer insights valiosos para as empresas, ajudando-as a tomar decisões mais informadas.",
       "## Aplicações da IA nos Negócios",
-      "Algumas das principais aplicações da IA nos negócios incluem a automação de processos, a análise de dados, a detecção de fraudes, a personalização de experiências de cliente e a gestão de cadeias de suprimentos. Além disso, a IA também pode ser usada para desenvolver chatbots e assistentes virtuais, que podem ajudar as empresas a melhorar a comunicação com os clientes e a reduzir os custos de atendimento ao cliente."
+      "Algumas das principais aplicações da IA nos negócios incluem: automação de processos, análise de dados, marketing personalizado, detecção de fraudes e desenvolvimento de produtos. Além disso, a IA também pode ser usada para melhorar a experiência do cliente, por meio de chatbots e sistemas de recomendação."
     ]
   }
 ]

@@ -5,27 +5,26 @@ from datetime import datetime
 from slugify import slugify
 from groq import Groq
 
-# O script agora lê a chave apenas do sistema ou do Netlify
 api_key = os.environ.get("GROQ_API_KEY")
-
 if not api_key:
-    raise ValueError("ERRO: GROQ_API_KEY não encontrada nas variáveis de ambiente.")
+    raise ValueError("ERRO: GROQ_API_KEY não encontrada.")
 
 client = Groq(api_key=api_key)
 POSTS_FILE = "../posts.json"
 
 def generate_post():
     prompt = """
-Responda APENAS com JSON válido. Sem markdown ou texto extra.
+Responda APENAS com JSON válido. Sem markdown.
 Formato:
 {
   "title": "",
   "excerpt": "",
+  "image_keyword": "palavra_chave_em_ingles",
   "content": ["parágrafo", "## subtítulo", "parágrafo"]
 }
-Tema: inteligência artificial aplicada a negócios. Escreva em português do Brasil.
+Tema: inteligência artificial aplicada a negócios.
 """
-    print("Gerando post com Llama 3.3...")
+    print("Gerando post e escolhendo imagem...")
     completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
@@ -44,6 +43,10 @@ def save_post(post):
         try: posts = json.load(f)
         except: posts = []
 
+    # Monta a URL da imagem usando a palavra-chave da IA
+    keyword = post.get("image_keyword", "technology")
+    image_url = f"https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&keywords={keyword}"
+
     new_post = {
         "id": max((p.get("id", 0) for p in posts), default=0) + 1,
         "slug": slugify(post["title"]),
@@ -52,7 +55,7 @@ def save_post(post):
         "category": "IA",
         "date": datetime.now().strftime("%d %b %Y"),
         "author": "AI Writer",
-        "coverImage": "assets/hero-illustration.svg",
+        "coverImage": image_url, # Agora usa a URL externa
         "content": [str(item).strip() for item in post["content"] if str(item).strip()]
     }
     posts.insert(0, new_post)
