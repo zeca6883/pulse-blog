@@ -15,68 +15,54 @@ client = Groq(api_key=api_key)
 POSTS_FILE = "../posts.json"
 
 def generate_post():
-    # Lista de temas para alternar automaticamente e evitar repetição
+    # Temas variados para evitar repetição
     temas = [
-        "IA generativa para pequenas empresas",
-        "O futuro do trabalho com assistentes de IA",
-        "Como usar IA para análise de dados de vendas",
-        "Segurança de dados na era da inteligência artificial",
-        "IA e a personalização da experiência do cliente"
+        "O impacto da IA na produtividade empresarial",
+        "Como a IA generativa está a mudar o marketing digital",
+        "Automação inteligente: o futuro dos processos de negócio",
+        "Análise de dados e IA: tomadas de decisão mais rápidas",
+        "Cibersegurança e Inteligência Artificial"
     ]
     tema_escolhido = random.choice(temas)
 
     prompt = f"""
     Responda APENAS com JSON válido. Sem markdown.
-    Crie um post ÚNICO e CRIATIVO sobre o tema: {tema_escolhido}.
+    Crie um post ÚNICO sobre o tema: {tema_escolhido}.
     
-    Regras:
-    1. O título deve ser chamativo e diferente de "Inteligência Artificial nos Negócios".
-    2. O excerpt deve ser um resumo curto e instigante.
-    3. image_keyword: uma palavra única em INGLÊS que represente o post (ex: 'robot', 'office', 'data').
-    4. O conteúdo deve ter pelo menos 3 parágrafos e 1 subtítulo (usando ##).
-
     Formato:
     {{
       "title": "",
       "excerpt": "",
-      "image_keyword": "",
-      "content": []
+      "content": ["parágrafo", "## subtítulo", "parágrafo"]
     }}
     """
     
-    print(f"Gerando post único sobre: {tema_escolhido}...")
+    print(f"Gerando conteúdo sobre: {tema_escolhido}...")
     
     completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.8 # Aumentado para gerar mais variedade
+        temperature=0.8
     )
     
     text = (completion.choices[0].message.content or "").strip()
     text = text.replace("```json", "").replace("```", "").strip()
     
     match = re.search(r"\{.*\}", text, re.S)
-    if not match: 
-        raise ValueError("A IA não retornou um JSON válido.")
-        
+    if not match: raise ValueError("JSON inválido")
     return json.loads(match.group(0))
 
 def save_post(post):
     if not os.path.exists(POSTS_FILE):
-        with open(POSTS_FILE, "w", encoding="utf-8") as f: 
-            json.dump([], f)
+        with open(POSTS_FILE, "w", encoding="utf-8") as f: json.dump([], f)
             
     with open(POSTS_FILE, "r", encoding="utf-8") as f:
-        try: 
-            posts = json.load(f)
-        except: 
-            posts = []
+        try: posts = json.load(f)
+        except: posts = []
 
-    # Gerador de imagem usando um serviço estável (Unsplash via API direta de busca)
-    keyword = post.get("image_keyword", "technology").lower()
-    # Usando um ID aleatório na URL para evitar que todos os posts usem a mesma foto
-    random_id = random.randint(1, 1000)
-    image_url = f"https://images.unsplash.com/photo-{random_id}?auto=format&fit=crop&w=800&q=80&sig={random_id}&{keyword}"
+    # NOVO GERADOR DE IMAGEM: Picsum Photos (Usa um ID aleatório de 1 a 1000)
+    img_id = random.randint(1, 1000)
+    image_url = f"https://picsum.photos/id/{img_id}/800/450"
 
     new_post = {
         "id": max((p.get("id", 0) for p in posts), default=0) + 1,
@@ -90,12 +76,9 @@ def save_post(post):
         "content": [str(item).strip() for item in post["content"] if str(item).strip()]
     }
     
-    # Adiciona no início da lista
     posts.insert(0, new_post)
-    
     with open(POSTS_FILE, "w", encoding="utf-8") as f:
         json.dump(posts, f, indent=2, ensure_ascii=False)
-        
     return new_post
 
 def main():
@@ -104,7 +87,7 @@ def main():
         saved = save_post(post_data)
         print(f"✅ Post criado com sucesso: {saved['title']}")
     except Exception as e:
-        print(f"❌ Erro durante o processo: {e}")
+        print(f"❌ Erro: {e}")
 
 if __name__ == "__main__":
     main()
