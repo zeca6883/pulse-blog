@@ -1,10 +1,18 @@
 @echo off
-cd /d %~dp0
+:: Entra na pasta onde o script está
+cd /d "%~dp0"
 
+:: Executa o gerador de post
 python generate_post.py
-if errorlevel 1 exit /b 1
 
-cd ..
-git add .
-git commit -m "novo post automatico"
-git push
+:: Se o python funcionou, sobe para o GitHub
+if %errorlevel% equ 0 (
+    cd ..
+    git add .
+    git commit -m "Novo post automatico via IA"
+    git push origin main
+    echo --- Publicado com sucesso! ---
+) else (
+    echo --- Erro ao gerar o post. Abortando git push. ---
+)
+pause
