@@ -1,5 +1,39 @@
 [
   {
+    "id": 8,
+    "slug": "inteligencia-artificial-aplicada-a-negocios",
+    "title": "Inteligência Artificial Aplicada a Negócios",
+    "excerpt": "A inteligência artificial (IA) está revolucionando o mundo dos negócios, permitindo que as empresas tomem decisões mais informadas e melhorem sua eficiência.",
+    "category": "IA",
+    "date": "12 Mar 2026",
+    "author": "AI Writer",
+    "coverImage": "assets/hero-illustration.svg",
+    "content": [
+      "A inteligência artificial (IA) é uma tecnologia que permite que os computadores realizem tarefas que normalmente exigiriam inteligência humana, como aprender, raciocinar e resolver problemas.",
+      "## Aplicações da IA nos Negócios",
+      "A IA pode ser aplicada de diversas maneiras nos negócios, incluindo a análise de dados, a automação de processos, a personalização de experiências de cliente e a previsão de tendências de mercado.",
+      "A IA também pode ser usada para melhorar a eficiência operacional, reduzir custos e aumentar a produtividade, permitindo que as empresas sejam mais competitivas no mercado.",
+      "Além disso, a IA pode ser usada para desenvolver novos produtos e serviços, como chatbots e assistentes virtuais, que podem melhorar a experiência do cliente e aumentar a satisfação."
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "inteligencia-artificial-aplicada-a-negocios",
+    "title": "Inteligência Artificial Aplicada a Negócios",
+    "excerpt": "A inteligência artificial está revolucionando a forma como as empresas operam e tomam decisões.",
+    "category": "IA",
+    "date": "12 Mar 2026",
+    "author": "AI Writer",
+    "coverImage": "assets/hero-illustration.svg",
+    "content": [
+      "A inteligência artificial (IA) é uma tecnologia que permite às máquinas aprender e tomar decisões de forma autônoma, baseada em dados e algoritmos. No contexto de negócios, a IA pode ser aplicada de diversas maneiras, desde a automação de processos até a análise de dados para tomar decisões estratégicas.",
+      "## Benefícios da IA para os Negócios",
+      "A IA pode trazer vários benefícios para as empresas, incluindo a melhoria da eficiência, a redução de custos e o aumento da competitividade. Além disso, a IA pode ajudar as empresas a entender melhor seus clientes e a personalizar suas ofertas.",
+      "A IA também pode ser usada para automatizar tarefas rotineiras e liberar recursos humanos para focar em atividades mais estratégicas e criativas. Isso pode incluir a automação de processos de marketing, vendas e suporte ao cliente.",
+      "A IA pode ser aplicada em diversas áreas de negócios, incluindo a análise de dados, a previsão de demanda, a gestão de estoque e a otimização de cadeias de suprimento."
+    ]
+  },
+  {
     "id": 1,
     "slug": "como-estruturar-um-blog-estatico",
     "title": "Como estruturar um blog estatico de forma escalavel",
